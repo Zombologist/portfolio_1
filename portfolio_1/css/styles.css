@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	box-sizing: border-box;
+}
+
+html, body, div, img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+	overflow-y: none;
+	overflow-x: hidden;
+	background: fixed;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+/* new code (.n-container) */
+
+.n-container {
+	height: 15%vh;
+	width: 100%vw;
+}
+
+#navlist {
+	margin: 10px;
+	/*	width: 100%;	*/
+	font-family: sans-serif;
+}
+
+#navlist li {
+	display: inline-block;
+	/*	width: 120px;	*/
+	margin-left: 2px;
+	/* border: 1px solid #000; */
+}
+
+#navlist a {
+	display: block;
+	padding: 3px;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #fff;
+	color: #000000;
+}
+
+#navlist a:hover {
+	/* background-color: #000000; */
+	color: #fff;
+	text-shadow:
+		-1px -1px 0 #000,  
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+/*	.container {
+	max-height: 520px;
+	border: 1px solid #ddd;
+	display: flex;
+	overflow-x: auto;
+}	*/
+
+.container {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	overflow-x: scroll;
+	/*	max-height: 440px;	*/
+	height: 85%vh; /* set the height to 85% of the viewport height */
+	border: 1px solid #ddd;
+}
+
+.container::-webkit-scrollbar {
+	width: 0;
+}
+
+.container .item {
+	min-width: 70vh; /* changed to 70vh from 430px */
+	height: 70vh; /* changed to 70vh from 430px */
+	line-height: 70vh; /* changed to 70vh from 430px */
+	text-align: center;
+	background-color: #ddd;
+	margin-right: 2px;
+	/* new code below */
+	flex-shrink: 0;
+}
+
+/*
+img {
+	height: 510px;
+	width: 510px;
+	display: block;
+}
+*/
+
+.container .item img {
+	height: auto; /* changed from 100% to auto */
+	width: auto; /* changed from 100% to auto */
+	max-height: 100%;
+	max-width: 100%;
+	display: block;
+	object-fit: cover;
+	/*	object-fit: contain;	*/
+	border-radius: 5px;
+}
+
+.container .item .overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 10px;
+	font-size: 24px;
+	font-weight: bold;
+	display: none;
+}
+
+.container .item:hover .overlay {
+	display: block;
+}
+
+footer {
+	padding-left: 1vw;
+}
+
+footer p {
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	font-size: x-small;
+}
